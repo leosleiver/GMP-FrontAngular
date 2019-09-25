@@ -14,7 +14,7 @@ export const ComputadorRoutes: Routes = [
 		component: CadastrarComputadorComponent 
 	},
 	{ 
-		path: 'computadores/editar/:id', 
+		path: 'computadores/consultar/:id', 
 		component: EditarComputadorComponent 
 	}
 ];

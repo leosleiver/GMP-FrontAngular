@@ -1,9 +1,11 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
-import {Computador , ComputadorService } from '../shared';
+import {Computador , ComputadorService} from '../shared';
+import { Setor } from '../../setores/shared'
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms'; 
 import {Response} from '../../service/response';
 import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-cadastrar-computador',
@@ -11,7 +13,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./cadastrar-computador.component.css']
 })
 export class CadastrarComputadorComponent implements OnInit {
-  
+   @ViewChild('formComputador' , { static: true }) formComputador: NgForm;
+    private setores: Setor[] = new Array();
     private titulo:string;
     private computador:Computador = new Computador();
  
@@ -21,28 +24,14 @@ export class CadastrarComputadorComponent implements OnInit {
  
     /*CARREGADO NA INICIALIZAÇÃO DO COMPONENTE */
     ngOnInit() {
- 
-      this.activatedRoute.params.subscribe(parametro=>{
- 
-        if(parametro["codigo"] == undefined){
- 
-          this.titulo = "Novo Cadastro de Conputador";
-        }
-        else{
- 
-          this.titulo = "Editar Cadastro de Computador";
-          this.computadorService.getComputador(Number(parametro["id"])).subscribe(res => this.computador = res);
-        }
- 
- 
-      });      
+           this.computadorService.getSetores().subscribe(res => this.setores = res);
+      
     }
  
     /*FUNÇÃO PARA SALVAR UM NOVO REGISTRO OU ALTERAÇÃO EM UM REGISTRO EXISTENTE */
     cadastrar():void {
  
-      /*SE NÃO TIVER CÓDIGO VAMOS INSERIR UM NOVO REGISTRO */
-      if(this.computador.id == undefined){
+      
  
         /*CHAMA O SERVIÇO PARA ADICIONAR UM NOVO COMPUTADOR */
         this.computadorService.addComputador(this.computador).subscribe(response => {
@@ -69,34 +58,6 @@ export class CadastrarComputadorComponent implements OnInit {
             alert(erro);
          });
  
-      }
-      else{
- 
-        /*AQUI VAMOS ATUALIZAR AS INFORMAÇÕES DE UM REGISTRO EXISTENTE */
-        this.computadorService.atualizarComputador(this.computador).subscribe(response => {
- 
-        //PEGA O RESPONSE DO RETORNO DO SERVIÇO
-        let res:Response = <Response>response;
- 
-         /*SE RETORNOU 1 DEVEMOS MOSTRAR A MENSAGEM DE SUCESSO
-           E REDIRECIONAR O USUÁRIO PARA A PÁGINA DE CONSULTA*/
-        if(res.codigo == 1){
-          alert(res.mensagem);
-          this.router.navigate(['/computador/consultar']);
-        }
-         else{
-          /*ESSA MENSAGEM VAI SER MOSTRADA CASO OCORRA ALGUMA EXCEPTION
-          NO SERVIDOR (CODIGO = 0)*/
-           alert(res.mensagem);
-         }
-       },
-       (erro) => {                    
-         /**AQUI VAMOS MOSTRAR OS ERROS NÃO TRATADOS
-          EXEMPLO: SE APLICAÇÃO NÃO CONSEGUIR FAZER UMA REQUEST NA API                        */                 
-          alert(erro);
-       });
-      }
- 
-    }
+     }
  
   }

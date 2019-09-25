@@ -36,6 +36,11 @@ export class ComputadorService {
     getComputadores(){        
         return this.http.get(this.baseUrlService + 'listar').map(res => res.json());
     }
+
+    /**CONSULTA OS SETORES EXISTENTES*/
+    getSetores(){
+        return this.http.get(this.baseUrlService + 'listarSetores').map(res => res.json());
+    }
  
     /**ADICIONA UM NOVO COMPUTADOR */
     addComputador(computador: Computador){
@@ -44,23 +49,23 @@ export class ComputadorService {
         .map(res => res.json());
     }
     /**EXCLUI UM COMPUTADOR */
-    excluirComputador(codigo:number){
+    excluirComputador(id:number){
  
-        return this.http.delete(this.baseUrlService + 'excluir' + codigo).map(res => res.json());
+        return this.http.delete(this.baseUrlService + 'excluir/' + id).map(res => res.json());
     }
  
     /**CONSULTA UM COMPUTADOR PELO CÓDIGO */
-    getComputador(codigo:number){
+    getComputador(id:number){
  
-        return this.http.get(this.baseUrlService +'consultar' +  codigo).map(res => res.json());
+        return this.http.get(this.baseUrlService +'consultar/' +  id).map(res => res.json());
     }
  
     /**ATUALIZA INFORMAÇÕES DO COMPUTADOR */
     atualizarComputador(computador:Computador){
  
-        return this.http.put(this.baseUrlService + 'editar', JSON.stringify(computador),this.options)
+        return this.http.put(this.baseUrlService + 'atualizar', JSON.stringify(computador),this.options)
         .map(res => res.json());
    
  
-}
+    }
 }

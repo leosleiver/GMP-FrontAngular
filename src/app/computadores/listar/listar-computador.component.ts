@@ -13,6 +13,7 @@ import {Response} from '../../service';
 export class ListarComputadorComponent implements OnInit {
  private computadores: Computador[] = new Array();
     private titulo:string;
+    private computador : Computador = new Computador();
  
     constructor(private computadorService: ComputadorService,
                 private router: Router){}
@@ -41,9 +42,11 @@ export class ListarComputadorComponent implements OnInit {
               /*1 = SUCESSO
               * MOSTRAMOS A MENSAGEM RETORNADA PELO SERVIÇO E DEPOIS REMOVEMOS
               O REGISTRO DA TABELA HTML*/
-              if(res.codigo == 1){
+              if(res.codigo == 1){  
                 alert(res.mensagem);
                 this.computadores.splice(index,1);
+                this.router.navigate(['/computadores/listar']);
+
               }
               else{
                 /*0 = EXCEPTION GERADA NO SERVIÇO JAVA */
@@ -53,14 +56,15 @@ export class ListarComputadorComponent implements OnInit {
           (erro) => {                    
                /*MOSTRA ERROS NÃO TRATADOS */
                alert(erro);
-          });        
+          }); 
+
       }
  
     }
  
     editar(codigo:number):void{
  
-      this.router.navigate(['/cadastro-computador',codigo]);
+      this.router.navigate(['/editar-computador',codigo]);
  
     }
 

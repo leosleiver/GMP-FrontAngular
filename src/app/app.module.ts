@@ -7,19 +7,29 @@ import { FormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {ConfigService} from './service';
 import { ComputadorService } from './computadores/shared';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CadastrarSetorComponent } from './setores/cadastrar/cadastrar-setor.component';
+import { ListarSetorComponent } from './setores/listar/listar-setor.component';
+import { EditarSetorComponent } from './setores/editar/editar-setor.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CadastrarSetorComponent,
+    ListarSetorComponent,
+    EditarSetorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ComputadorModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+    NgbModule,
   ],
   providers: [ConfigService,ComputadorService],
   bootstrap: [AppComponent]
