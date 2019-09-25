@@ -44,6 +44,7 @@ export class CadastrarComputadorComponent implements OnInit {
            if(res.codigo == 1){
             alert(res.mensagem);
             this.computador = new Computador();
+            this.router.navigate(['computadores/listar']);
            }
            else{
              /*

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ComputadorRoutes } from './computadores';
+import {SetorRoutes } from './setores';
 
 const routes: Routes = [
 { 
@@ -9,7 +10,8 @@ const routes: Routes = [
 		pathMatch: 'full' 
 	},
 
-...ComputadorRoutes	
+...ComputadorRoutes,
+...SetorRoutes	
 ];
 
 @NgModule({

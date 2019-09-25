@@ -20,8 +20,7 @@ export class ListarComputadorComponent implements OnInit {
  
     ngOnInit() {
  
-      /*SETA O TÍTULO */
-      this.titulo = "Registros Cadastrados";
+     
  
       /*CHAMA O SERVIÇO E RETORNA TODOS OS COMPUTADORES CADASTRADOS */
       this.computadorService.getComputadores().subscribe(res => this.computadores = res);
@@ -45,7 +44,7 @@ export class ListarComputadorComponent implements OnInit {
               if(res.codigo == 1){  
                 alert(res.mensagem);
                 this.computadores.splice(index,1);
-                this.router.navigate(['/computadores/listar']);
+                location.reload();
 
               }
               else{

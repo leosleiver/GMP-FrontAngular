@@ -1,101 +1,100 @@
-<h1>Cadastrar Computador</h1>
+<br/><br/><br/><br/>
 
+<h1 class="Title text-center">Cadastrar Computador</h1>
+<br/><br/>
 
 
 <section>
-      <!-- Painel -->
-      <div class="panel panel-computador panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title panel-title-computador">Cadastro de
-            Computador</h3>
+  <!-- Painel -->
+  <div class="panel panel-computador panel-primary">
+
+
+    <!-- Formulário -->
+    <form (ngSubmit)="cadastrar()"
+    name="userForm"
+    #formComputador="ngForm">
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+       <!-- LINHA -->
+       <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="nome" >Nome*</label>
+          <input type="text" class="form-control" id="nome" name="nome"
+          placeholder="Nome do computador" minlength="5" 
+          autofocus="autofocus" [(ngModel)]="computador.nome" #nome="ngModel" required>
+
         </div>
 
-        <!-- Formulário -->
-        <form (ngSubmit)="cadastrar()"
-         name="userForm"
-        #formComputador="ngForm"
-          class="form-horizontal">
-          <div class="panel panel-default">
-            <div class="panel-body">
+        <div class="form-group col-md-4">
+         <label for="modelo">Modelo*</label>
+         <select class="form-control" name="modelo" id="modelo"
+         [(ngModel)]="computador.modelo" #modelo="ngModel" required>
+         <option value="Hp">Hp</option>
+         <option value="Positivo">Positivo</option>
+         <option value="Lenovo">Lenovo</option>
+         <option value="Elcoma">Elcoma</option>
+       </select>
+     </div>
 
-             <div class="form-group">
-                <label for="modelo" class="col-sm-2 control-label">Modelo*</label>
-                <div class="col-vsm-2">
-                  <select class="form-control" name="modelo" id="modelo"
-                   [(ngModel)]="computador.modelo" #modelo="ngModel" required>
-                    <option value="Hp">Hp</option>
-                    <option value="Positivo">Positivo</option>
-                    <option value="Lenovo">Lenovo</option>
-                    <option value="Elcoma">Elcoma</option>
-                  </select>
-                </div>
-              </div>
+     <div class="form-group col-md-4">
+      <label for="setor">Setor*</label>
 
+      <select [(ngModel)]="computador.setor" #setor="ngModel"  name="setor" id="setor" class="form-control">
+        <option *ngFor="let setor of setores" [value]="setor">{{ setor.nome }}</option>
 
-              <div class="form-group">
-                <label for="nome" class="col-sm-2 control-label">Nome*</label>
-                <div class="col-sm-3">
-                  <input type="text" class="form-control" id="nome" name="nome"
-                    placeholder="Nome do computador" minlength="5" 
-                    autofocus="autofocus" [(ngModel)]="computador.nome" #nome="ngModel" required />
-                  </div>
-              </div>
-
-              <div class="form-group">
-                <label for="descricao" class="col-sm-2 control-label">Descrição*</label>
-                <div class="col-sm-3">
-                  <input type="text" class="form-control" id="descricao"
-                    name="descricao" placeholder="Descrição do computador" minlength="10" 
-                    autofocus="autofocus" [(ngModel)]="computador.descricao" #descricao="ngModel" required />
-                  
-                </div>
-              </div>
+      </select>
+    </div>  
+  </div>   
 
 
-              <div class="form-group">
-                <label for="gap_tomb" class="col-sm-2 control-label">Tombamento*</label>
-                <div class="col-sm-2">
-                  <input type="number" class="form-control" id="gap_tomb" minlength="5" 
-                    name="gap_tomb" placeholder="(Patrimônio)" autofocus="autofocus"
-                    [(ngModel)]="computador.gap_tomb" #tombamento="ngModel" required />
-                 
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label for="setor" class="col-sm-2 control-label">Setor*</label>
-                <div class="col-sm-2">
-                    <select [(ngModel)]="computador.setor" #setor="ngModel"  name="setor" id="setor" class="form-control" 
-                    ng-options="setor.nome for setor in setores"></select>
-                  </div>
-              </div>
+  <!-- LINHA -->
 
-              <div class="form-group">
-                <label for="ip" class="col-sm-2 control-label">IP*</label>
-                <div class="col-sm-2">
-                  <input type="number" class="form-control" id="ip" name="ip" 
-                    placeholder="Ex: 192.168.102.14" required autofocus="autofocus" [(ngModel)]="computador.ip" #ip="ngModel" required/>
-                 </div>
-              </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="gap_tomb">Tombamento*</label>
+      <input type="number" class="form-control" id="gap_tomb" minlength="5" 
+      name="gap_tomb" placeholder="(Patrimônio)" autofocus="autofocus"
+      [(ngModel)]="computador.gap_tomb" #tombamento="ngModel" required>
+    </div>
 
-               <div class="form-group">
-                <label for="ramal" class="col-sm-2 control-label">Ramal*</label>
-                <div class="col-sm-2">
-                  <input type="number" class="form-control" id="ramal" name="ramal" minlength="5" 
-                    placeholder="Ramal" required ng-minlength="4"
-                    ng-maxlength="10" autofocus="autofocus" [(ngModel)]="computador.ramal" #ramal="ngModel" required />
-                    <br/>
-                    <div class="form-group" align="center">
-                    <div class="col-sm-5">
-                      <button type="submit"  [disabled]="!formComputador.form.valid">Salvar</button>
-                      </div>
-                  </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        
-        </form>
-      </div>
-    </section>
-     
+
+
+    <div class="form-group col-md-4">
+      <label for="ip">IP*</label>
+      <input type="number" class="form-control" id="ip" name="ip" 
+      placeholder="Ex: 192.168.102.14" required autofocus="autofocus" [(ngModel)]="computador.ip" #ip="ngModel" required>
+
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="ramal">Ramal*</label>
+      <input type="number" class="form-control" id="ramal" name="ramal" minlength="5" 
+      placeholder="Ramal" required ng-minlength="4"
+      ng-maxlength="10" autofocus="autofocus" [(ngModel)]="computador.ramal" #ramal="ngModel" required>
+
+    </div>
+  </div>
+  <!-- LINHA -->
+
+
+  <div class="form-group col-md-12">
+    <label for="descricao">Descrição*</label>
+    <input type="text" class="form-control" id="descricao"
+    name="descricao" placeholder="Descrição do computador" minlength="10" 
+    autofocus="autofocus" [(ngModel)]="computador.descricao" #descricao="ngModel" required>
+  </div>
+
+  <div class="form-group text-center">
+   <button type="submit" class="btn btn-success"  [disabled]="!formComputador.form.valid">Salvar</button>
+
+ </div>
+</div>
+</div>
+
+
+</form>
+</div>
+</section>
+

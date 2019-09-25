@@ -7,6 +7,7 @@ export class Computador {
     public gap_tomb: number;
     public ramal: number;
     public ip: number;
+    public setor: object;
 
 
 }
