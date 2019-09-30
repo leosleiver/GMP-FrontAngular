@@ -1,1 +1,49 @@
-<p>cadastrar-setor works!</p>
+<br/><br/><br/><br/>
+
+<h1 class="Title text-center">Cadastrar Setor</h1>
+<br/><br/>
+
+
+<section>
+  <!-- Painel -->
+  <div class="panel panel-setor panel-primary">
+
+
+    <!-- Formulário -->
+    <form (ngSubmit)="cadastrar()"
+    name="userForm"
+    #formSetor="ngForm">
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+       <!-- LINHA -->
+       <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="nome" >Nome*</label>
+          <input type="text" class="form-control" id="nome" name="nome"
+          placeholder="Nome do Setor" minlength="5" 
+          autofocus="autofocus" [(ngModel)]="setor.nome" #nome="ngModel" required>
+
+        </div>
+</div>
+
+  <div class="form-group col-md-12">
+    <label for="descricao">Descrição*</label>
+    <input type="text" class="form-control" id="descricao"
+    name="descricao" placeholder="Descrição do Setor" minlength="10" 
+    autofocus="autofocus" [(ngModel)]="setor.descricao" #descricao="ngModel" required>
+  </div>
+
+ 
+
+ </div>
+  <div class="form-group text-center">
+   <button type="submit" class="btn btn-success"  [disabled]="!formSetor.form.valid">Salvar</button>
+</div>
+</div>
+
+
+</form>
+</div>
+</section>
+

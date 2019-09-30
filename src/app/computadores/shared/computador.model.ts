@@ -7,7 +7,13 @@ export class Computador {
     public gap_tomb: number;
     public ramal: number;
     public ip: number;
-    public setor: object;
+    public setor: Setor;
 
+}export class Setor {
+	
+    public id: number;
+    public nome: string;
+    public descricao: string;
+    
 
 }

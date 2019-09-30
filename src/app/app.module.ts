@@ -4,7 +4,7 @@ import { ComputadorModule } from './computadores';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule} from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import {ConfigService} from './service';
 import { ComputadorService } from './computadores/shared';
 import { SetorService } from './setores/shared';
@@ -28,7 +28,7 @@ import { EditarSetorComponent } from './setores/editar/editar-setor.component';
     AppRoutingModule,
     ComputadorModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     NgbModule,
   ],

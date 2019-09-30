@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CadastrarComputadorComponent implements OnInit {
    @ViewChild('formComputador' , { static: true }) formComputador: NgForm;
-    private setores: Setor[] = new Array();
+    private setores;
     private titulo:string;
     private computador:Computador = new Computador();
  
@@ -50,13 +50,15 @@ export class CadastrarComputadorComponent implements OnInit {
              /*
              ESSA MENSAGEM VAI SER MOSTRADA CASO OCORRA ALGUMA EXCEPTION
              NO SERVIDOR (CODIGO = 0)*/
-             alert(res.mensagem);
+             
+            this.computador = new Computador();
+            this.router.navigate(['computadores/listar']);
            }
          },
          (erro) => {   
            /**AQUI VAMOS MOSTRAR OS ERROS NÃO TRATADOS
              EXEMPLO: SE APLICAÇÃO NÃO CONSEGUIR FAZER UMA REQUEST NA API                        */                 
-            alert(erro);
+           alert(erro);
          });
  
      }

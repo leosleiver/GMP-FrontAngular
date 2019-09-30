@@ -10,9 +10,9 @@ import {Response} from '../../service';
   styleUrls: ['./listar-setor.component.css']
 })
 export class ListarSetorComponent implements OnInit {
- private setores: Setor[] = new Array();
+ private setores;
     private titulo:string;
-    private setor : Setor = new Setor();
+    private setor;
  
     constructor(private setorService: SetorService,
                 private router: Router){}

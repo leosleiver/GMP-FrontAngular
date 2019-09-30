@@ -41,7 +41,7 @@
       <label for="setor">Setor*</label>
 
       <select [(ngModel)]="computador.setor" #setor="ngModel"  name="setor" id="setor" class="form-control">
-        <option *ngFor="let setor of setores" [value]="setor">{{ setor.nome }}</option>
+        <option *ngFor="let setor of setores" [value]="setor.id">{{ setor.nome }}</option>
 
       </select>
     </div>  

@@ -15,7 +15,7 @@ export class EditarComputadorComponent implements OnInit {
     
     @ViewChild('formComputador' , { static: true }) formComputador: NgForm;
     
-    computador : Computador;
+    private computador;
   
 
  constructor(private computadorService: ComputadorService,

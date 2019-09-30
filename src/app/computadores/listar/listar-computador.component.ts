@@ -11,7 +11,7 @@ import {Response} from '../../service';
   styleUrls: ['./listar-computador.component.css']
 })
 export class ListarComputadorComponent implements OnInit {
- private computadores: Computador[] = new Array();
+ private computadores;
     private titulo:string;
     private computador : Computador = new Computador();
  
@@ -23,7 +23,7 @@ export class ListarComputadorComponent implements OnInit {
      
  
       /*CHAMA O SERVIÇO E RETORNA TODOS OS COMPUTADORES CADASTRADOS */
-      this.computadorService.getComputadores().subscribe(res => this.computadores = res);
+      this.computadorService.getComputadores().subscribe(res => this.computadores = <any> res);
     }
  
     /**EXCLUI UM REGISTRO QUANDO CLICAMOS NA OPÇÃO EXCLUIR

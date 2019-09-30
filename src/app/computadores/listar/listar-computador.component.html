@@ -6,14 +6,14 @@
 <br/><br/><br/><br/>
 
 
- <th class="Btnew">
-      <a [routerLink]="['/computadores/cadastrar']"
-         class="btn btn-primary  btn-lg pull-right h2">
-         <span class="glyphicon glyphicon-plus" 
-           aria-hidden="true"></span> Novo
-      </a>
+<th class="Btnew">
+  <a [routerLink]="['/computadores/cadastrar']"
+  class="btn btn-primary  btn-lg pull-right h2">
+  <span class="glyphicon glyphicon-plus" 
+  aria-hidden="true"></span> Novo
+</a>
 
-  </th>
+</th>
 
 
 
@@ -21,48 +21,48 @@
  
 
 
-      <table class="table table-striped" cellspacing="0" cellpadding="0" >
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Modelo</th>
-            <th>Nome</th>
-            <th>Ramal</th>
-            <th>IP</th> 
-           
-          </tr>
+  <table class="table table-striped" cellspacing="0" cellpadding="0" >
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Modelo</th>
+        <th>Nome</th>
+        <th>Ramal</th>
+        <th>IP</th> 
+        
+      </tr>
 
-        </thead>
+    </thead>
 
 
-        <tbody>
+    <tbody>
 
-          
-          <tr *ngFor="let computador of computadores">
-            <td>{{computador.id}}</td>
-            <td>{{computador.modelo}}</td>
-            <td>{{computador.nome}}</td>
-            <td>{{computador.ramal}}</td>
-            <td>{{computador.ip}}</td>
-            <td class="text-center" style="width: 200px">
-      <a [routerLink]="['/computadores/consultar', computador.id]"
-        title="Editar" alt="Editar"
-        class="btn btn-xs btn-info">
-        <span class="glyphicon glyphicon-pencil" 
+      
+      <tr *ngFor="let computador of computadores">
+        <td>{{computador.id}}</td>
+        <td>{{computador.modelo}}</td>
+        <td>{{computador.nome}}</td>
+        <td>{{computador.ramal}}</td>
+        <td>{{computador.ip}}</td>
+        <td class="text-center" style="width: 200px">
+          <a [routerLink]="['/computadores/consultar', computador.id]"
+          title="Editar" alt="Editar"
+          class="btn btn-xs btn-info">
+          <span class="glyphicon glyphicon-pencil" 
           aria-hidden="true"></span> Editar
-      </a>
-      <a  class="btn btn-xs btn-danger"
+        </a>
+        <a  class="btn btn-xs btn-danger"
         (click)="excluir(computador.id)">
         <span class="glyphicon glyphicon-remove" 
-          aria-hidden="true"></span> Remover
+        aria-hidden="true"></span> Remover
       </a>
     </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    
- 
-    
-    
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
 

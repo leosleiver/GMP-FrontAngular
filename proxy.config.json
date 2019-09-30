@@ -1,0 +1,8 @@
+{
+
+	"/api/*":{
+		"target":"http://localhost:8080/gpm",
+		"secure":false,
+		"logLevel":"debug"
+	}
+}
