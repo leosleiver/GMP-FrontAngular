@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ComputadorRoutes } from './computadores';
 import {SetorRoutes } from './setores';
+import {UsuarioRoutes } from './usuarios';
 
 const routes: Routes = [
 { 
@@ -11,7 +12,8 @@ const routes: Routes = [
 	},
 
 ...ComputadorRoutes,
-...SetorRoutes	
+...SetorRoutes,
+...UsuarioRoutes	
 ];
 
 @NgModule({

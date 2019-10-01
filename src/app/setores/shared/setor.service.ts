@@ -58,7 +58,7 @@ export class SetorService {
     /**ATUALIZA INFORMAÇÕES DO SETOR */
     atualizarSetor(setor:Setor){
  
-        return this.http.put(this.baseUrlService + 'atualizar',setor);
+        return this.http.put(this.baseUrlService + 'alterar',setor);
    
  
     }

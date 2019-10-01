@@ -1,27 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import {Setor , SetorService } from '../shared';
+import {Usuario , UsuarioService } from '../shared';
 import {Router} from '@angular/router';
 import {Response} from '../../service';
 
 
 @Component({
-  selector: 'app-listar-setor',
-  templateUrl: './listar-setor.component.html',
-  styleUrls: ['./listar-setor.component.css']
+  selector: 'app-listar-usuario',
+  templateUrl: './listar-usuario.component.html',
+  styleUrls: ['./listar-usuario.component.css']
 })
-export class ListarSetorComponent implements OnInit {
- private setores;
-    private titulo:string;
-    private setor;
+export class ListarUsuarioComponent implements OnInit {
+private usuarios;
+  
+    private usuario : Usuario = new Usuario();
  
-    constructor(private setorService: SetorService,
+    constructor(private usuarioService: UsuarioService,
                 private router: Router){}
  
     ngOnInit() {
  
      
-      /*CHAMA O SERVIÇO E RETORNA TODOS OS SETORES CADASTRADOS */
-      this.setorService.getSetores().subscribe(res => this.setores = res);
+ 
+      /*CHAMA O SERVIÇO E RETORNA TODOS OS USUARIOS CADASTRADOS */
+      this.usuarioService.getUsuarios().subscribe(res => this.usuarios = <any> res);
     }
  
     /**EXCLUI UM REGISTRO QUANDO CLICAMOS NA OPÇÃO EXCLUIR
@@ -31,7 +32,7 @@ export class ListarSetorComponent implements OnInit {
       if(confirm("Deseja realmente excluir esse registro?")){
  
         /*CHAMA O SERVIÇO PARA REALIZAR A EXCLUSÃO */
-        this.setorService.excluirSetor(codigo).subscribe(response => {
+        this.usuarioService.excluirUsuario(codigo).subscribe(response => {
  
               /**PEGA O RESPONSE DO SERVIÇO */
               let res:Response = <Response>response;
@@ -41,13 +42,13 @@ export class ListarSetorComponent implements OnInit {
               O REGISTRO DA TABELA HTML*/
               if(res.codigo == 1){  
                 alert(res.mensagem);
+                this.usuarios.splice(index,1);
                 location.reload();
 
               }
               else{
                 /*0 = EXCEPTION GERADA NO SERVIÇO JAVA */
-                 alert("Registro excluído com sucesso");
-                 location.reload();
+                alert(res.mensagem);
               }
           },
           (erro) => {                    
@@ -61,10 +62,9 @@ export class ListarSetorComponent implements OnInit {
  
     editar(codigo:number):void{
  
-      this.router.navigate(['/editar-setor',codigo]);
+      this.router.navigate(['/editar-usuario',codigo]);
  
     }
 
 
 }
-

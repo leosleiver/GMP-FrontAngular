@@ -8,11 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {ConfigService} from './service';
 import { ComputadorService } from './computadores/shared';
 import { SetorService } from './setores/shared';
+import { UsuarioService } from './usuarios/shared';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CadastrarSetorComponent } from './setores/cadastrar/cadastrar-setor.component';
 import { ListarSetorComponent } from './setores/listar/listar-setor.component';
 import { EditarSetorComponent } from './setores/editar/editar-setor.component';
+import { CadastrarUsuarioComponent } from './usuarios/cadastrar/cadastrar-usuario.component';
+import { EditarUsuarioComponent } from './usuarios/editar/editar-usuario.component';
+import { ListarUsuarioComponent } from './usuarios/listar/listar-usuario.component';
 
 
 
@@ -21,7 +25,10 @@ import { EditarSetorComponent } from './setores/editar/editar-setor.component';
     AppComponent,
     CadastrarSetorComponent,
     ListarSetorComponent,
-    EditarSetorComponent
+    EditarSetorComponent,
+    CadastrarUsuarioComponent,
+    EditarUsuarioComponent,
+    ListarUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,7 @@ import { EditarSetorComponent } from './setores/editar/editar-setor.component';
     BrowserAnimationsModule,
     NgbModule,
   ],
-  providers: [ConfigService,ComputadorService,SetorService],
+  providers: [ConfigService,ComputadorService,SetorService,UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
