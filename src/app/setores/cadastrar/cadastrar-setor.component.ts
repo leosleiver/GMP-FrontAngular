@@ -49,7 +49,7 @@ export class CadastrarSetorComponent implements OnInit {
              /*
              ESSA MENSAGEM VAI SER MOSTRADA CASO OCORRA ALGUMA EXCEPTION
              NO SERVIDOR (CODIGO = 0)*/
-             alert(res.mensagem);
+             alert("Registo salvo com sucesso!");
             this.setor = new Setor();
             this.router.navigate(['setores/listar']);
            }

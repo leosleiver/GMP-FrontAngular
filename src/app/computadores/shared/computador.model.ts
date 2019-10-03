@@ -8,6 +8,8 @@ export class Computador {
     public ramal: number;
     public ip: number;
     public setor: Setor;
+    public idrefsetor: number;
+
 
 }export class Setor {
 	

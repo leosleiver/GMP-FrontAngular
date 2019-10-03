@@ -16,7 +16,7 @@ export class EditarComputadorComponent implements OnInit {
     @ViewChild('formComputador' , { static: true }) formComputador: NgForm;
     
     private computador;
-  
+     private setores;
 
  constructor(private computadorService: ComputadorService,
                 private router: Router,
@@ -24,7 +24,7 @@ export class EditarComputadorComponent implements OnInit {
   ngOnInit() {
        const id = +this.route.snapshot.params['id'];
        this.computadorService.getComputador(id).subscribe(res => this.computador = res);
-      
+        this.computadorService.getSetores().subscribe(res => this.setores = res);
       
   }
   

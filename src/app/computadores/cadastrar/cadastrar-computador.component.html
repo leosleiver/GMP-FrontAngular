@@ -40,7 +40,7 @@
      <div class="form-group col-md-4">
       <label for="setor">Setor*</label>
 
-      <select [(ngModel)]="computador.setor" #setor="ngModel"  name="setor" id="setor" class="form-control">
+      <select [(ngModel)]="computador.idrefsetor" #idrefsetor="ngModel"  name="idrefsetor" id="idrefsetor" class="form-control">
         <option *ngFor="let setor of setores" [value]="setor.id">{{ setor.nome }}</option>
 
       </select>

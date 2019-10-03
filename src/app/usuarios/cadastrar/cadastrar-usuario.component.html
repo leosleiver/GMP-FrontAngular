@@ -52,60 +52,67 @@
 
 				<div class="form-row">
 					<div class="form-group col-md-4">
-						<label for="gap_tomb">Tombamento*</label>
-						<input type="number" class="form-control" id="gap_tomb" minlength="5" 
-						name="gap_tomb" placeholder="(Patrimônio)" autofocus="autofocus"
-						[(ngModel)]="computador.gap_tomb" #tombamento="ngModel" required>
-					</div>
-
-
-
-					<div class="form-group col-md-4">
-						<label for="ip">IP*</label>
-						<input type="number" class="form-control" id="ip" name="ip" 
-						placeholder="Ex: 192.168.102.14" required autofocus="autofocus" [(ngModel)]="computador.ip" #ip="ngModel" required>
-
-					</div>
-
-					<div class="form-group col-md-4">
-						<label for="modelo">Modelo*</label>
-						<select class="form-control" name="modelo" id="modelo"
-						[(ngModel)]="usuario.modelo" #modelo="ngModel" required>
-						<option value="Hp">Hp</option>
-						<option value="Positivo">Positivo</option>
-						<option value="Lenovo">Lenovo</option>
-						<option value="Elcoma">Elcoma</option>
-					</select>
+						<label for="cargo">Cargo*</label>
+						<select class="form-control" name="cargo" id="cargo"
+						[(ngModel)]="usuario.cargo" #cargo="ngModel" required>
+						<option value="Diretor">Diretor</option>
+						<option value="Supervisor">Supervisor</option>
+						<option value="Gerente">Gerente</option>
+						</select>
 				</div>
 
 
-			</div>
-			<!-- LINHA -->
+
+				<div class="form-group col-md-4">
+					<label for="matricula">Matrícula*</label>
+					<input type="number" class="form-control" id="matricula" name="matricula" 
+					placeholder="Matrícula" required autofocus="autofocus" [(ngModel)]="usuario.matricula" #matricula="ngModel" required>
+
+				</div>
 
 
-			<div class="form-group col-md-12">
-				<label for="descricao">Descrição*</label>
-				<input type="text" class="form-control" id="descricao"
-				name="descricao" placeholder="Descrição do computador" minlength="10" 
-				autofocus="autofocus" [(ngModel)]="computador.descricao" #descricao="ngModel" required>
-			</div>
+				
+					<div class="form-group col-md-4">
+						<label for="perfil">Perfil*</label>
+						<select class="form-control" name="perfil" id="perfil"
+						[(ngModel)]="usuario.perfil" #perfil="ngModel" required>
+						<option value="Admin">Admin</option>
+						<option value="User">User</option>
+						</select>
+				</div>
 
-			<div class="form-group col-md-4">
-				<label for="setor">Setor*</label>
+		</div >
 
-				<select [(ngModel)]="computador.setor" #setor="ngModel"  name="setor" id="setor" class="form-control">
-					<option *ngFor="let setor of setores" [value]="setor.id">{{ setor.nome }}</option>
+		<div class="form-row">
+			
 
-				</select>
-			</div> 
+				<div class="form-group col-md-4">
+					<label for="senha">Senha de Acesso*</label>
+					<input type="password" class="form-control" id="senha" name="senha" 
+					placeholder="Matrícula" required autofocus="autofocus" [(ngModel)]="usuario.senha" #senha="ngModel" required>
+
+				</div>
+
+
+				<div class="form-group col-md-4">
+					<label for="confirmsenha">Confirmar senha*</label>
+					<input type="password" class="form-control" id="confirmsenha" name="confirmsenha" 
+					placeholder="Matrícula" required autofocus="autofocus" [(ngModel)]="usuario.confirmsenha" required>
+
+				</div>
+                 <span *ngIf="confirmsenha != usuario.confirmsenha" class="error"> Campos devem ser iguais!!! </span>
+
 
 
 		</div>
-		<div class="form-group text-center">
-			<button type="submit" class="btn btn-success"  [disabled]="!formComputador.form.valid">Salvar</button>
+		<!-- LINHA -->
 
-		</div>
 	</div>
+	<div class="form-group text-center">
+		<button type="submit" class="btn btn-success"  [disabled]="!formComputador.form.valid">Salvar</button>
+
+	</div>
+</div>
 
 
 </form>
