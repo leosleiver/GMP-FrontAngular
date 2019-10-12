@@ -5,7 +5,8 @@ export class Usuario {
     public email: string;
     public senha: string;
     public telefone: number;
-    public perfil: string;
+    public cargo: string;
+    public matricula: number;
     
 
 }

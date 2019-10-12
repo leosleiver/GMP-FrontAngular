@@ -1,0 +1,29 @@
+<br/><br/><br/><br/><br/><br/>
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+   
+     <div id="formHeader">
+      <h1 class="danger" for="GPM" >GPM LOGIN</h1>
+    </div>
+
+    <!-- Login Form -->
+    <form (ngSubmit)="fazerLogin()">
+      <input type="text" id="matricula" class="fadeIn second" name="matricula" placeholder="Matrícula" [(ngModel)]="usuario.matricula">
+      <input type="password" id="senha" class="fadeIn third" name="senha" placeholder="Senha" [(ngModel)]="usuario.senha">
+      <div class="form-group text-center">
+      <button type="submit" class="btn btn-info btn-lg" name="action">
+        Log In
+      </button>
+       </div>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>

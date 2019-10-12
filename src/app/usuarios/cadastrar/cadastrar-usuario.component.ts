@@ -17,6 +17,7 @@ export class CadastrarUsuarioComponent implements OnInit {
     private setores;
     private titulo:string;
     private usuario:Usuario = new Usuario();
+     confirmsenha: string;
  
     constructor(private usuarioService: UsuarioService,
                 private router: Router,

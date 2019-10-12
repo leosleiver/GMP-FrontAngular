@@ -3,17 +3,19 @@ import { Routes, RouterModule } from '@angular/router';
 import {ComputadorRoutes } from './computadores';
 import {SetorRoutes } from './setores';
 import {UsuarioRoutes } from './usuarios';
+import {LoginRoutes } from './login';
 
 const routes: Routes = [
 { 
 		path: '', 
-		redirectTo: '/computadores/listar', 
+		redirectTo: 'login', 
 		pathMatch: 'full' 
 	},
 
 ...ComputadorRoutes,
 ...SetorRoutes,
-...UsuarioRoutes	
+...UsuarioRoutes,
+...LoginRoutes	
 ];
 
 @NgModule({

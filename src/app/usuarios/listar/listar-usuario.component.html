@@ -29,7 +29,7 @@
         <th>E-mail</th>
         <th>Senha</th>
         <th>Telefone</th>
-        <th>Perfil</th> 
+        <th>Cargo</th> 
         
       </tr>
 
@@ -39,13 +39,13 @@
     <tbody>
 
       
-      <tr *ngFor="let computador of computadores">
+      <tr *ngFor="let usuario of usuarios">
         <td>{{usuario.id}}</td>
         <td>{{usuario.nome}}</td>
         <td>{{usuario.email}}</td>
         <td>{{usuario.senha}}</td>
         <td>{{usuario.telefone}}</td>
-        <td>{{usuario.perfil}}</td>
+        <td>{{usuario.cargo}}</td>
         <td class="text-center" style="width: 200px">
           <a [routerLink]="['/usuarios/consultar', usuario.id]"
           title="Editar" alt="Editar"

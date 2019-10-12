@@ -7,6 +7,7 @@ import {Response} from '../../service/response';
 import { ActivatedRoute } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-cadastrar-computador',
   templateUrl: './cadastrar-computador.component.html',
@@ -17,6 +18,7 @@ export class CadastrarComputadorComponent implements OnInit {
     private setores;
     private titulo:string;
     private computador:Computador = new Computador();
+
  
     constructor(private computadorService: ComputadorService,
                 private router: Router,
@@ -25,7 +27,7 @@ export class CadastrarComputadorComponent implements OnInit {
     /*CARREGADO NA INICIALIZAÇÃO DO COMPONENTE */
     ngOnInit() {
            this.computadorService.getSetores().subscribe(res => this.setores = res);
-      
+          
     }
  
     /*FUNÇÃO PARA SALVAR UM NOVO REGISTRO OU ALTERAÇÃO EM UM REGISTRO EXISTENTE */

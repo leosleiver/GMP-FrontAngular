@@ -9,6 +9,7 @@ import {ConfigService} from './service';
 import { ComputadorService } from './computadores/shared';
 import { SetorService } from './setores/shared';
 import { UsuarioService } from './usuarios/shared';
+import { LoginService } from './login/shared';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CadastrarSetorComponent } from './setores/cadastrar/cadastrar-setor.component';
@@ -17,6 +18,10 @@ import { EditarSetorComponent } from './setores/editar/editar-setor.component';
 import { CadastrarUsuarioComponent } from './usuarios/cadastrar/cadastrar-usuario.component';
 import { EditarUsuarioComponent } from './usuarios/editar/editar-usuario.component';
 import { ListarUsuarioComponent } from './usuarios/listar/listar-usuario.component';
+import { TelaLoginComponent } from './login/tela-login/tela-login.component';
+import { AuthGuard } from './guards';
+
+
 
 
 
@@ -28,7 +33,10 @@ import { ListarUsuarioComponent } from './usuarios/listar/listar-usuario.compone
     EditarSetorComponent,
     CadastrarUsuarioComponent,
     EditarUsuarioComponent,
-    ListarUsuarioComponent
+    ListarUsuarioComponent,
+    TelaLoginComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +47,7 @@ import { ListarUsuarioComponent } from './usuarios/listar/listar-usuario.compone
     BrowserAnimationsModule,
     NgbModule,
   ],
-  providers: [ConfigService,ComputadorService,SetorService,UsuarioService],
+  providers: [ConfigService,ComputadorService,SetorService,UsuarioService,LoginService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

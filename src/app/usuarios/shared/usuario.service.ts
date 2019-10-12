@@ -28,7 +28,7 @@ export class UsuarioService {
  
     /**CONSULTA TODOS OS USUARIOS CADASTRADOS */
     getUsuarios(){        
-        return this.http.get(this.baseUrlService + 'listar');
+        return this.http.get(this.baseUrlService + 'lista');
     }
 
     /**CONSULTA OS SETORES EXISTENTES*/
@@ -57,7 +57,7 @@ export class UsuarioService {
     /**ATUALIZA INFORMAÇÕES DO COMPUTADOR */
     atualizarUsuario(usuario:Usuario){
  
-        return this.http.put(this.baseUrlService + 'atualizar',usuario);
+        return this.http.put(this.baseUrlService + 'alterar',usuario);
    
  
     }

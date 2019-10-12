@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from './login/shared/';
 
 
 @Component({
@@ -7,5 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'GMP-Front-Angular';
+ 
+
+ mostrarMenu: boolean = false;
+
+constructor(private loginService: LoginService){
+
 }
+
+ ngOnInit( ) {
+
+ 	this.loginService.mostrarMenuEmitter.subscribe(
+        mostrar => this.mostrarMenu = mostrar
+ 		);
+ }
+
+}
+
+
