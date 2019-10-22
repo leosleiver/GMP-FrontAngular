@@ -48,4 +48,11 @@ usuarioEstaAutenticado(){
 	return this.usuarioAutenticado;
 }
 
+setFalseforLogout(){
+	    this.usuarioAutenticado = false;
+		this.mostrarMenuEmitter.emit(false);
+	
 }
+
+}
+

@@ -20,6 +20,7 @@ import { EditarUsuarioComponent } from './usuarios/editar/editar-usuario.compone
 import { ListarUsuarioComponent } from './usuarios/listar/listar-usuario.component';
 import { TelaLoginComponent } from './login/tela-login/tela-login.component';
 import { AuthGuard } from './guards';
+import { InicioComponent } from './inicio/inicio.component';
 
 
 
@@ -35,6 +36,7 @@ import { AuthGuard } from './guards';
     EditarUsuarioComponent,
     ListarUsuarioComponent,
     TelaLoginComponent,
+    InicioComponent,
    
     
   ],

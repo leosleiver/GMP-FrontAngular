@@ -44,8 +44,8 @@ export class ListarComputadorComponent implements OnInit {
               O REGISTRO DA TABELA HTML*/
               if(res.codigo == 1){  
                 alert(res.mensagem);
-                //this.computadores.splice(index,1);
-                location.reload();
+                this.computadores.splice(index,1);
+               
 
               }
               else{

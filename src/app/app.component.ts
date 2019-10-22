@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from './login/shared/';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,8 @@ export class AppComponent {
 
  mostrarMenu: boolean = false;
 
-constructor(private loginService: LoginService){
+constructor(private loginService: LoginService,
+            private route: Router){
 
 }
 
@@ -22,6 +24,13 @@ constructor(private loginService: LoginService){
         mostrar => this.mostrarMenu = mostrar
  		);
  }
+
+fazerLogout(){
+    this.loginService.setFalseforLogout();
+    this.route.navigate(['login']);
+       
+ }
+
 
 }
 

@@ -4,6 +4,7 @@ import {ComputadorRoutes } from './computadores';
 import {SetorRoutes } from './setores';
 import {UsuarioRoutes } from './usuarios';
 import {LoginRoutes } from './login';
+import {InicioRoutes} from './inicio';
 
 const routes: Routes = [
 { 
@@ -15,7 +16,8 @@ const routes: Routes = [
 ...ComputadorRoutes,
 ...SetorRoutes,
 ...UsuarioRoutes,
-...LoginRoutes	
+...LoginRoutes,
+...InicioRoutes
 ];
 
 @NgModule({

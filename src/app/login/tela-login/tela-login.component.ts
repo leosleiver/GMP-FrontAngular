@@ -33,12 +33,12 @@ export class TelaLoginComponent implements OnInit {
          E REDIRECIONAR O USUÁRIO PARA A PÁGINA DE CONSULTA*/
          if(res.codigo == 1){
           alert(res.mensagem);
-          this.router.navigate(['/usuarios/listar']);
+          this.router.navigate(['inicio']);
         }
         else{
           /*ESSA MENSAGEM VAI SER MOSTRADA CASO OCORRA ALGUMA EXCEPTION
           NO SERVIDOR (CODIGO = 0)*/
-          this.router.navigate(['/usuarios/listar']);
+          this.router.navigate(['inicio']);
         }
       },
       (erro) => {                    

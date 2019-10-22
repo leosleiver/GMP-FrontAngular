@@ -41,13 +41,14 @@ export class ListarSetorComponent implements OnInit {
               O REGISTRO DA TABELA HTML*/
               if(res.codigo == 1){  
                 alert(res.mensagem);
-                location.reload();
+                this.setores.splice(index,1);
 
               }
               else{
                 /*0 = EXCEPTION GERADA NO SERVIÇO JAVA */
-                 alert("Registro excluído com sucesso");
-                 location.reload();
+                alert("Registro excluído com sucesso");
+                this.setores.splice(index,1);
+                 
               }
           },
           (erro) => {                    

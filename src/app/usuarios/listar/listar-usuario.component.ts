@@ -43,12 +43,13 @@ private usuarios;
               if(res.codigo == 1){  
                 alert(res.mensagem);
                 this.usuarios.splice(index,1);
-                location.reload();
+                
 
               }
               else{
                 /*0 = EXCEPTION GERADA NO SERVIÇO JAVA */
-                alert(res.mensagem);
+                alert("Registro excluído com sucesso");
+                this.usuarios.splice(index,1);
               }
           },
           (erro) => {                    
