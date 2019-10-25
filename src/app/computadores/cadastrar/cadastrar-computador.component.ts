@@ -26,14 +26,18 @@ export class CadastrarComputadorComponent implements OnInit {
  
     /*CARREGADO NA INICIALIZAÇÃO DO COMPONENTE */
     ngOnInit() {
-           this.computadorService.getSetores().subscribe(res => this.setores = res);
+
+     
+        this.computadorService.getSetores().subscribe(res => this.setores = res);
+      
+           
           
     }
  
     /*FUNÇÃO PARA SALVAR UM NOVO REGISTRO OU ALTERAÇÃO EM UM REGISTRO EXISTENTE */
     cadastrar():void {
  
-      
+      if(this.formComputador.form.valid){
  
         /*CHAMA O SERVIÇO PARA ADICIONAR UM NOVO COMPUTADOR */
         this.computadorService.addComputador(this.computador).subscribe(response => {
@@ -62,6 +66,9 @@ export class CadastrarComputadorComponent implements OnInit {
              EXEMPLO: SE APLICAÇÃO NÃO CONSEGUIR FAZER UMA REQUEST NA API                        */                 
            alert(erro);
          });
+        }
+
+        
  
      }
  

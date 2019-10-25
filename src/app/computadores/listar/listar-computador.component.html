@@ -24,26 +24,25 @@
   <table class="table table-striped" cellspacing="0" cellpadding="0" >
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Modelo</th>
         <th>Nome</th>
-        <th>Ramal</th>
+        <th>Modelo</th>
+        <th>Patrimônio</th>
         <th>IP</th> 
+        <th>Descrição</th> 
+
         
       </tr>
 
     </thead>
 
-
     <tbody>
-
-      
+     
       <tr *ngFor="let computador of computadores">
-        <td>{{computador.id}}</td>
-        <td>{{computador.modelo}}</td>
         <td>{{computador.nome}}</td>
-        <td>{{computador.ramal}}</td>
+        <td>{{computador.modelo}}</td>
+        <td>{{computador.gap_tomb}}</td>
         <td>{{computador.ip}}</td>
+        <td>{{computador.descricao}}</td>
         <td class="text-center" style="width: 200px">
           <a [routerLink]="['/computadores/consultar', computador.id]"
           title="Editar" alt="Editar"
