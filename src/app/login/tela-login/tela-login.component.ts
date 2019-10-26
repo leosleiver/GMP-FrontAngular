@@ -24,27 +24,28 @@ export class TelaLoginComponent implements OnInit {
 
 	fazerLogin(){
 
-      this.loginService.verificarUsuario(this.usuario).subscribe(response => {
+      this.loginService.verificarUsuario(this.usuario).subscribe(usuario => {
 
         //PEGA O RESPONSE DO RETORNO DO SERVIÇO
-        let res:Response = <Response>response;
+        let user:Usuario = <Usuario>usuario;
 
          /*SE RETORNOU 1 DEVEMOS MOSTRAR A MENSAGEM DE SUCESSO
          E REDIRECIONAR O USUÁRIO PARA A PÁGINA DE CONSULTA*/
-         if(res.codigo == 1){
-          alert(res.mensagem);
-          this.router.navigate(['inicio']);
+         if(user.id != null){
+           this.loginService.setTrue();
+         this.router.navigate(['inicio']);
         }
         else{
           /*ESSA MENSAGEM VAI SER MOSTRADA CASO OCORRA ALGUMA EXCEPTION
           NO SERVIDOR (CODIGO = 0)*/
-          this.router.navigate(['inicio']);
+          this.loginService.setFalseforLogout();
+          alert("Matrícula ou Senha inválida")
         }
       },
       (erro) => {                    
          /**AQUI VAMOS MOSTRAR OS ERROS NÃO TRATADOS
          EXEMPLO: SE APLICAÇÃO NÃO CONSEGUIR FAZER UMA REQUEST NA API                        */                 
-         alert(erro);
+         alert("Matrícula ou Senha inválida")
        });
 
 		

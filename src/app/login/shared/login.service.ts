@@ -31,17 +31,8 @@ export class LoginService {
       
       this.user = this.http.put(this.baseUrlService + 'autenticarUsuario',usuario)
 
-      if(this.user != null){
-        this.usuarioAutenticado = true;
-		this.mostrarMenuEmitter.emit(true);
-
 		return this.user;
-      }else{
-      	this.usuarioAutenticado = false;
-		this.mostrarMenuEmitter.emit(false);
-		return null;
-
-      }
+       
   }   
 
 usuarioEstaAutenticado(){
@@ -52,6 +43,10 @@ setFalseforLogout(){
 	    this.usuarioAutenticado = false;
 		this.mostrarMenuEmitter.emit(false);
 	
+}
+setTrue(){
+	this.usuarioAutenticado = true;
+	this.mostrarMenuEmitter.emit(true);
 }
 
 }
