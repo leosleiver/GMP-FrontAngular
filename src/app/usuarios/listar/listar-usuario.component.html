@@ -1,9 +1,19 @@
-<br/><br/><br/><br/>
-
-
-<h1 class="Title text-center" >Usuários</h1>
 
 <br/><br/><br/><br/>
+
+
+<h1 class="Title text-left" >Usuários</h1>
+
+<br/><br/><br/><br/>
+
+<div class="input-group h2">
+  <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
+  <span class="input-group-btn">
+      <button class="btn btn-primary" type="submit">
+          <span class="glyphicon glyphicon-search"></span>
+      </button>
+  </span>
+</div>
 
 
 <th class="Btnew">
@@ -21,15 +31,16 @@
  
 
 
-  <table class="table table-striped" cellspacing="0" cellpadding="0" >
+  <table class="table table-striped table-bordered text-center" cellspacing="0" cellpadding="0" >
     <thead>
       <tr>
       
-        <th>Nome</th>
-        <th>E-mail</th>
-        <th>Matrícula</th>
-        <th>Telefone</th>
-        <th>Cargo</th> 
+        <th class="text-center">Nome</th>
+        <th class="text-center">E-mail</th>
+        <th class="text-center">Matrícula</th>
+        <th class="text-center">Telefone</th>
+        <th class="text-center">Cargo</th> 
+        <th class="text-center">Ações</th>
         
       </tr>
 
@@ -62,6 +73,19 @@
   </tr>
 </tbody>
 </table>
+<div id="bottom" class="row">
+  <div class="col-md-12">
+       
+      <ul class="pagination">
+          <li class="disabled"><a>&lt; Anterior</a></li>
+          <li class="disabled"><a>1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li class="next"><a href="#" rel="next">Próximo &gt;</a></li>
+      </ul><!-- /.pagination -->
+
+  </div>
+</div> <!-- /#bottom -->
 </div>
 
 

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms'; 
 import {Response} from '../../service/response';
 import { ActivatedRoute } from '@angular/router';
+import { UsuarioService } from '../../usuarios/shared'
 
 
 @Component({
@@ -16,14 +17,16 @@ export class CadastrarSetorComponent implements OnInit {
     private setores;
     private titulo:string;
     private setor:Setor = new Setor();
+    private usuarios;
  
     constructor(private setorService: SetorService,
+                private usuarioService: UsuarioService,
                 private router: Router,
                 private activatedRoute: ActivatedRoute){}
  
     /*CARREGADO NA INICIALIZAÇÃO DO COMPONENTE */
     ngOnInit() {
-       
+       this.usuarioService.getUsuarios().subscribe(res => this.usuarios = res);
       
     }
  

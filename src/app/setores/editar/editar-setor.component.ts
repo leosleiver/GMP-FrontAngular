@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {Response} from '../../service';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms'; 
+import { UsuarioService } from '../../usuarios/shared'
 
 @Component({
   selector: 'app-editar-setor',
@@ -15,14 +16,17 @@ export class EditarSetorComponent implements OnInit {
     @ViewChild('formSetor' , { static: true }) formSetor: NgForm;
     
     private setor;
+    private usuarios;
   
 
  constructor(private setorService: SetorService,
+            private usuarioService: UsuarioService,
                 private router: Router,
                 private route: ActivatedRoute){}
   ngOnInit() {
        const id = +this.route.snapshot.params['id'];
        this.setorService.getSetor(id).subscribe(res => this.setor = res);
+       this.usuarioService.getUsuarios().subscribe(res => this.usuarios = res);
       
       
   }
