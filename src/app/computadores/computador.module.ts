@@ -6,6 +6,7 @@ import { ComputadorService } from './shared';
 import { ListarComputadorComponent } from './listar';
 import { CadastrarComputadorComponent } from './cadastrar';
 import { EditarComputadorComponent } from './editar';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -14,7 +15,8 @@ import { EditarComputadorComponent } from './editar';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    Ng2SearchPipeModule
   ],
   providers :[
   ComputadorService

@@ -13,6 +13,7 @@ export class ListarUsuarioComponent implements OnInit {
 private usuarios;
   
     private usuario : Usuario = new Usuario();
+    
  
     constructor(private usuarioService: UsuarioService,
                 private router: Router){}

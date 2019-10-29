@@ -12,16 +12,12 @@ import { UsuarioService } from './usuarios/shared';
 import { LoginService } from './login/shared';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { CadastrarSetorComponent } from './setores/cadastrar/cadastrar-setor.component';
-import { ListarSetorComponent } from './setores/listar/listar-setor.component';
-import { EditarSetorComponent } from './setores/editar/editar-setor.component';
-import { CadastrarUsuarioComponent } from './usuarios/cadastrar/cadastrar-usuario.component';
-import { EditarUsuarioComponent } from './usuarios/editar/editar-usuario.component';
-import { ListarUsuarioComponent } from './usuarios/listar/listar-usuario.component';
 import { TelaLoginComponent } from './login/tela-login/tela-login.component';
 import { AuthGuard } from './guards';
 import { InicioComponent } from './inicio/inicio.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { UsuarioModule } from './usuarios';
+import { SetorModule } from './setores';
 
 
 
@@ -29,25 +25,22 @@ import { InicioComponent } from './inicio/inicio.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CadastrarSetorComponent,
-    ListarSetorComponent,
-    EditarSetorComponent,
-    CadastrarUsuarioComponent,
-    EditarUsuarioComponent,
-    ListarUsuarioComponent,
     TelaLoginComponent,
     InicioComponent,
-   
+     
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ComputadorModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     NgbModule,
+    Ng2SearchPipeModule,
+    SetorModule,
+    ComputadorModule,
+    UsuarioModule,
   ],
   providers: [ConfigService,ComputadorService,SetorService,UsuarioService,LoginService,AuthGuard],
   bootstrap: [AppComponent]

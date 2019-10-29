@@ -6,6 +6,7 @@ import { SetorService } from './shared';
 import { ListarSetorComponent } from './listar';
 import { CadastrarSetorComponent } from './cadastrar';
 import { EditarSetorComponent } from './editar';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -14,7 +15,8 @@ import { EditarSetorComponent } from './editar';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    Ng2SearchPipeModule
   ],
   providers :[
   SetorService

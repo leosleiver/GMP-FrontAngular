@@ -7,11 +7,11 @@
 <br/><br/><br/><br/>
 
 <div class="input-group h2">
-  <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
+  <input name="data[search]" class="form-control" id="search" type="text" [(ngModel)]="filter" placeholder="Pesquisar Itens">
   <span class="input-group-btn">
-      <button class="btn btn-primary" type="submit">
+      <a class="btn btn-primary" (click)="pesquisarNalista()">
           <span class="glyphicon glyphicon-search"></span>
-      </button>
+      </a>
   </span>
 </div>
 
@@ -50,7 +50,7 @@
     <tbody>
 
       
-      <tr *ngFor="let usuario of usuarios">
+      <tr *ngFor="let usuario of usuarios | filter:filter; let i = index">
        
         <td>{{usuario.nome}}</td>
         <td>{{usuario.email}}</td>

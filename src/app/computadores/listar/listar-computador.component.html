@@ -6,14 +6,14 @@
 <br/><br/><br/><br/>
 
 
-  <div class="input-group h2">
-      <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
-      <span class="input-group-btn">
-          <button class="btn btn-primary" type="submit">
-              <span class="glyphicon glyphicon-search"></span>
-          </button>
-      </span>
-  </div>
+<div class="input-group h2">
+  <input name="data[search]" class="form-control" id="search" type="text" [(ngModel)]="filter" placeholder="Pesquisar Itens">
+  <span class="input-group-btn">
+      <a class="btn btn-primary" (click)="pesquisarNalista()">
+          <span class="glyphicon glyphicon-search"></span>
+      </a>
+  </span>
+</div>
 
 
 <th class="Btnew">
@@ -48,7 +48,7 @@
 
     <tbody>
      
-      <tr *ngFor="let computador of computadores">
+      <tr *ngFor="let computador of computadores | filter:filter; let i = index">
         <td>{{computador.nome}}</td>
         <td>{{computador.modelo}}</td>
         <td>{{computador.gap_tomb}}</td>
