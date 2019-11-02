@@ -103,21 +103,7 @@
             </div>
         </div>
 
-        <div class="form-group col-md-4">
-          <label for="ramal">Ramal*</label>
-          <input type="number" class="form-control" id="ramal" name="ramal" minlength="5" placeholder="Ramal"
-            required ng-minlength="4" ng-maxlength="10" autofocus="autofocus" [(ngModel)]="computador.ramal"
-            #ramal="ngModel" maxlength="8" required>
-            <div *ngIf="ramal.errors && (ramal.dirty || ramal.touched)" class="alert alert-danger">
-              <div [hidden]="!ramal.errors.required">
-                Digite o número do Ramal
-              </div>
-              <div [hidden]="!ramal.errors.minlength">
-              minimo de 4 digitos
-              </div>
-              
-              </div>
-        </div>
+       
       </div>
       <!-- LINHA -->
 

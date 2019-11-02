@@ -4,7 +4,7 @@ export class ConfigService {
  
     constructor(){
  
-        this.urlService = 'http://localhost:8080/gpm/';
+        this.urlService = 'http://localhost:8080/';
     }
  
     getUrlService(): string {

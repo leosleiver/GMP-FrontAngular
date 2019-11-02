@@ -25,7 +25,7 @@ export class ListarSetorComponent implements OnInit {
 
     /*CHAMA O SERVIÇO E RETORNA TODOS OS SETORES CADASTRADOS */
     this.setorService.getSetores().subscribe(res => this.setores = res);
-    this.usuarioService.getUsuarios().subscribe(res => this.usuarios = res);
+   
 
   }
 
